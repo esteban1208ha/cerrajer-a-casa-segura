@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerrajería Casa Segura - Tu Seguridad en Manos Expertas</title>
+    <!-- Iconos de FontAwesome para replicar fielmente los del diseño -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* --- Barra Superior de Urgencias --- */
+        .top-bar {
+            background-color: #ff6600;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .top-bar .left {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .top-bar .right {
+            display: flex;
+            gap: 20px;
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* --- Encabezado Principal --- */
+        header {
+            background-color: #0b131a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid #1a252f;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .logo-icon {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 20px;
+        }
+        .logo-text h1 {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+        .logo-text span {
+            color: #ff6600;
+        }
+        .logo-text p {
+            font-size: 11px;
+            color: #a0aab2;
+            letter-spacing: 2px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav ul li a.active, nav ul li a:hover {
+            color: #ff6600;
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 5px;
+        }
+        .btn-urgencias-top {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- Sección Hero --- */
+        .hero {
+            background: linear-gradient(rgba(11, 19, 26, 0.85), rgba(11, 19, 26, 0.85)), url('https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            color: #fff;
+            padding: 80px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .hero-content {
+            max-width: 60%;
+        }
+        .hero-tagline {
+            color: #ff6600;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .hero-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .hero-content h2 span {
+            color: #ff6600;
+        }
+        .hero-content p {
+            color: #ced4da;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .btn-orange {
+            background-color: #ff6600;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+        .btn-green {
+            background-color: #25d366;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .badge-24hs {
+            background: radial-gradient(circle, #cc5200 0%, #ff6600 100%);
+            border: 4px dashed #fff;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255,102,0,0.5);
+        }
+        .badge-24hs span {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .badge-24hs h3 {
+            font-size: 40px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        /* --- Barra de Características Fijas --- */
+        .features-bar {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 5%;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 23%;
+        }
+        .feature-item i {
+            color: #ff6600;
+            font-size: 30px;
+        }
+        .feature-item h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #0b131a;
+        }
+        .feature-item p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* --- Sección Quiénes Somos --- */
+        .about {
+            padding: 80px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+        .about-img {
+            width: 45%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .about-content {
+            width: 50%;
+        }
+        .about-content subtitle {
+            color: #ff6600;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .about-content h3 {
+            font-size: 28px;
+            color: #0b131a;
+            margin-bottom: 20px;
+        }
+        .about-content h3 span {
+            color: #ff6600;
+        }
+        .about-content p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .about-badges {
+            display: flex;
+            justify-content: space-between;
+        }
+        .about-badge-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #0b131a;
+        }
+        .about-badge-item i {
+            color: #ff6600;
+            font-size: 20px;
+        }
+
+        /* --- Sección Productos Destacados --- */
+        .products-section {
+            background-color: #050b11;
+            padding: 60px 5%;
+            color: #fff;
+            text-align: center;
+        }
+        .products-section subtitle {
+            color: #ff6600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        .products-section h3 {
+            font-size: 26px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        .products-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 20px;
+            width: 24%;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .product-img-container {
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .product-img-container img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        .product-card h4 {
+            font-size: 16px;
+            color: #0b131a;
+            margin-bottom: 8px;
+        }
+        .product-card p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        .btn-consultar {
+            background-color: #ff6600;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* --- Sección Contacto --- */
+        .contact-section {
+            background-color: #0b131a;
+            padding: 50px 5%;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact-info {
+            width: 30%;
+        }
+        .contact-info h4 {
+            color: #ff6600;
+            text-transform: uppercase;
+            font-size: 18px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #ced4da;
+        }
+        .contact-item i {
+            color: #ff6600;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+        .contact-buttons {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+        }
+        .btn-social-ig {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+        }
+        .btn-social-ig span, .btn-social-wa span {
+            font-size: 12px;
+            font-weight: normal;
+            display: block;
+            color: #fff;
+            opacity: 0.9;
+        }
+        .btn-social-wa {
+            background-color: #25d366;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-weight: bold;
+        }
+        .map-container {
+            width: 35%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* --- Pie de Página --- */
+        footer {
+            background-color: #050b11;
+            color: #a0aab2;
+            padding: 20px 5%;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #1a252f;
+        }
+        footer span {
+            color: #ff6600;
+        }
+        
+        /* Botón Flotante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            text-decoration: none;
+        }
+
+        /* Responsivo básico */
+        @media (max-width: 992px) {
+            .hero, .features-bar, .about, .products-container, .contact-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+            .hero-content, .feature-item, .about-img, .about-content, .product-card, .contact-info, .contact-buttons, .map-container {
+                width: 100%;
+                max-width: 100%;
+            }
+            .hero-buttons, .about-badges {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            nav { display: none; } /* Simplificación para móvil */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superior de Urgencias -->
+    <div class="top-bar">
+        <div class="left">
+            <i class="fa-solid fa-bell-on"></i> URGENCIAS 24 HORAS TODOS LOS DÍAS
+        </div>
+        <div class="right">
+            <a href="tel:3704705256"><i class="fa-solid fa-phone"></i> 3704705256</a>
+            <a href="https://wa.me/543704267628" target="_blank"><i class="fa-brands fa-whatsapp"></i> 3704267628</a>
+        </div>
+    </div>
+
+    <!-- Encabezado -->
+    <header>
+        <a href="#" class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="logo-text">
+                <h1>Cerrajería <span>Casa Segura</span></h1>
+                <p>SEGURIDAD Y CONFIANZA</p>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Inicio</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <a href="tel:3704267628" class="btn-urgencias-top">
+            <i class="fa-solid fa-bell"></i> Urgencias 24 Hs
+        </a>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tagline">Protegemos lo que más importa</p>
+            <h2>TU SEGURIDAD EN<br><span>MANOS EXPERTAS</span></h2>
+            <p>Ofrecemos soluciones rápidas, confiables y profesionales para hogares, vehículos y comercios. Atención inmediata y servicio de urgencias 24 horas.</p>
+            <div class="hero-buttons">
+                <a href="tel:3704705256" class="btn-orange"><i class="fa-solid fa-phone"></i> Llamar Ahora</a>
+                <a href="https://wa.me/543704267628" class="btn-green" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="#" class="btn-outline">Solicitar Servicio</a>
+            </div>
+        </div>
+        <div class="badge-24hs">
+            <span>Atención de</span>
+            <h3>24</h3>
+            <span>Horas</span>
+        </div>
+    </section>
+
+    <!-- Barra de Características -->
+    <div class="features-bar">
+        <div class="feature-item">
+            <i class="fa-solid fa-shield-heart"></i>
+            <div>
+                <h4>Atención Rápida</h4>
+                <p>Resolvemos tu problem en el menor tiempo posible.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-medal"></i>
+            <div>
+                <h4>Experiencia</h4>
+                <p>Años de experiencia nos respaldan.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-house-chimney-user"></i>
+            <div>
+                <h4>Servicio a Domicilio</h4>
+                <p>Vamos hasta donde nos necesites.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+                <h4>Urgencias 24 Hs</h4>
+                <p>Disponibles todos los días, las 24 horas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección Quiénes Somos -->
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8?auto=format&fit=crop&q=80&w=600" alt="Local Cerrajería Casa Segura" class="about-img">
+        <div class="about-content">
+            <subtitle>¿Quiénes somos?</subtitle>
+            <h3>Más que una cerrajería,<br>somos <span>tu solución</span></h3>
+            <p>En Cerrajería Casa Segura nos dedicamos a brindar soluciones integrales en seguridad para hogares, vehículos y comercios. Contamos con tecnología de última generación, productos de alta calidad y un equipo profesional capacitado para ofrecerte el mejor servicio.</p>
+            <p>Tu tranquilidad es nuestra prioridad.</p>
+            <div class="about-badges">
+                <div class="about-badge-item"><i class="fa-solid fa-circle-check"></i> Confianza y seguridad</div>
+                <div class="about-badge-item"><i class="fa-solid fa-award"></i> Trabajo garantizado</div>
+                <div class="about-badge-item"><i class="fa-solid fa-tags"></i> Precios accesibles</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Productos Destacados -->
+    <section class="products-section">
+        <subtitle>Productos Destacados</subtitle>
+        <h3>Soluciones de Seguridad para Vos</h3>
+        
+        <div class="products-container">
+            <!-- Producto 1 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="62081.jpg" alt="Candado con alarma">
+                </div>
+                <div>
+                    <h4>Candado con alarma</h4>
+                    <p>Candado de alta seguridad con alarma integrada de 110dB.</p>
+                </div>
+                <a href="https://wa.me/543704267628?text=Hola,%20quiero%20consultar%20por%20el%20Candado%20con%20alarma" class="btn-consultar" target="_blank"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="62080.jpg" alt="Alarma para puertas">
+                </div>
+                <div>
+                    <h4>Alarma para puertas</h4>
+                    <p>Sistema de alarma con teclado numérico y sensor para puertas y ventanas.</p>
+                </div>
+                <a href="https://wa.me/543704267628?text=Hola,%20quiero%20consultar%20por%20la%20Alarma%20para%20puertas" class="btn-consultar" target="_blank"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="62079.jpg" alt="Cámara WiFi inteligente">
+                </div>
+                <div>
+                    <h4>Cámara WiFi inteligente</h4>
+                    <p>Cámara de seguridad robotizada con visión nocturna, doble lente y control celular.</p>
+                </div>
+                <a href="https://wa.me/543704267628?text=Hola,%20quiero%20consultar%20por%20la%20Camara%20WiFi%20inteligente" class="btn-consultar" target="_blank"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="62078.jpg" alt="Candado electrónico">
+                </div>
+                <div>
+                    <h4>Candado electrónico</h4>
+                    <p>Apertura inteligente con huella dactilar biométrica. Recargable por USB.</p>
+                </div>
+                <a href="https://wa.me/543704267628?text=Hola,%20quiero%20consultar%20por%20el%20Candado%20electronico" class="btn-consultar" target="_blank"><i class="fa-brands fa-whatsapp"></i> Consultar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section class="contact-section">
+        <div class="contact-info">
+            <h4>Contacto</h4>
+            <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Av. Néstor Kirchner 4195,<br>Barrio Illia 1, Formosa, Argentina</p>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <p>3704705256</p>
+            </div>
+            <div class="contact-item">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p>Urgencias 24 hs: 3704267628</p>
+            </div>
+        </div>
+
+        <div class="contact-buttons">
+            <a href="https://instagram.com/casaseguracerrajeria" class="btn-social-ig" target="_blank">
+                <i class="fa-brands fa-instagram" style="font-size: 30px;"></i>
+                <div>
+                    INSTAGRAM
+                    <span>@casaseguracerrajeria</span>
+                </div>
+            </a>
+            <a href="https://wa.me/543704267628" class="btn-social-wa" target="_blank">
+                <i class="fa-brands fa-whatsapp" style="font-size: 30px;"></i>
+                <div>
+                    WHATSAPP
+                    <span>Enviar mensaje</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Mapa de Google Emulado -->
+        <div class="map-container">
+            <iframe
+src="https://www.google.com/maps?q=Casa+Segura+Cerrajeria+Formosa+Argentina&output=embed"
+width="100%"
+height="100%"
+style="border:0; min-height: 250px;"
+allowfullscreen=""
+loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>© 2026 Cerrajería Casa Segura. Todos los derechos reservados.</p>
+        <p>Diseñado con <span>♥</span> para tu seguridad</p>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/543704267628" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
